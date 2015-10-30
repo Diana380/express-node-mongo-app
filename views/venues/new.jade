@@ -1,0 +1,26 @@
+extends ../layout
+
+block content
+    h1.
+        #{title}
+    form#formAddVenue(name="addvenue",method="post",action="/venues")
+        p Name: 
+            input#inputName(type="text", placeholder="venue name", name="name")
+        p Street Address: 
+            input#inputstreetAddress(type="text", placeholder="venue street address", name="streetAddress")
+        p Town:
+            input#inputType(type="text", placeholder="town name", name="town")
+        p Post Code: 
+            input#inputpostCode(type="text", placeholder="post code", name="postCode")
+        p Contact Name: 
+            input#inputcontactName(type="text", placeholder="venue contact name", name="contactName")
+        p Contact Number: 
+            input#inputcontactNumber(type="text", placeholder="venue contact number", name="contactNumber")
+        p Type: 
+            input#inputtype(type="text", placeholder="venue type", name="type")
+        p Surface Type: 
+            input#inputsurfaceType(type="text", placeholder="venue surface type", name="surfaceType")           
+        p
+            button#btnSubmit(type="submit") submit
+
+            

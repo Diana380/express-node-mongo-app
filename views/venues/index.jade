@@ -1,0 +1,34 @@
+extends ../layout
+
+block content
+    h1.
+         #{title}
+    .search-bar
+        input.form-control(type="search", results="5", placeholder="Search", ng-model="venues")
+    ul
+        - each venue, i in venues
+            p
+                = venue.name
+            p
+                = venue.streetAdress
+            p
+                = venue.town
+            p
+                = venue.postCode
+            p
+                = venue.contactName
+            p
+                = venue.contactNumber
+            p
+                = venue.type
+            p
+                = venue.surfaceType
+            p
+                form(action='/venues/#{venue._id}/edit',method='post',enctype='application/x-www-form-urlencoded')
+                    input(type='hidden',value='DELETE',name='_method')
+                    button(type='submit').
+                        Delete
+                p 
+                    a(href='/venues/#{venue._id}/edit') Edit
+                p
+                    a(href='/venues/#{venue._id}') Show

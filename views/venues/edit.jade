@@ -1,0 +1,27 @@
+extends ../layout
+
+block content
+	h1.
+		Venue ID #{venue._id}
+	form(action='/venues/#{venue._id}/edit',method='post',name='updatevenue',enctype='application/x-www-form-urlencoded')
+		p Name:
+			input#inputName(type='text', value='#{venue.name}', name='name')
+		p streetAdress:
+			input#inputstreetAddress(type='text', value='#{venue.streetAddress}', name='streetAddress')
+		p Town:
+			input#inputTown(type='text', value='#{venue.town}', name='town')
+		p postCode:
+			input#inputpostCode(type='text', value='#{venue.postCode}', name='postCode' )
+		p contactName:
+			input#inputcontactName(type='text', value='#{venue.contactName}', name='contactName' )
+		p Type:
+			input#inputType(type='text', value='#{venue.type}', name='type' )
+		p surfaceType:
+			input#inputsurfaceType(type='text', value='#{venue.surfaceType}', name='surfaceType' )
+		p
+			input(type='hidden',value='PUT',name='_method')
+		p
+			button#btnSubmit(type='submit').
+				Update
+
+			
